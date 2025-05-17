@@ -10,54 +10,56 @@
 <body>
     <header>
         <h1>Katlin</h1>
-        <h2>Portfólio Pessoal</h2>
+        <h2>Ciência de Dados & Consultoria Comercial</h2>
     </header>
 
-    <div class="tab">
+    <nav class="tab">
         <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
         <button class="tablinks" onclick="abrirPagina(event, 'formacao')">Formação</button>
         <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
         <button class="tablinks" onclick="abrirPagina(event, 'contato')">Contato</button>
-    </div>
+    </nav>
 
     <main>
-        <article>
-            <section id="sobre" class="tabcontent">
-                <h3>Sobre Mim</h3>
-                <p>Além da minha vida profissional, sou amante da natureza e corrida, atividades que me ajudam a manter o equilíbrio entre corpo e mente. Valorizo o aprendizado constante e a conexão humana, buscando sempre evoluir tanto pessoal quanto profissionalmente.</p>
-            </section>
+        <section id="sobre" class="tabcontent">
+            <h3>Sobre Mim</h3>
+            <p>Sou Katlin, apaixonada por tecnologia, natureza e movimento. Tenho uma trajetória sólida na área comercial e atualmente estou me especializando em Ciência de Dados, unindo minha vivência em vendas com análise estratégica. Acredito em conexões humanas e em usar a tecnologia como ponte para soluções inteligentes.</p>
+        </section>
 
-            <section id="formacao" class="tabcontent">
-                <h3>Formação</h3>
-                <p>Cursando Ciência de Dados.</p>
-            </section>
+        <section id="formacao" class="tabcontent">
+            <h3>Formação</h3>
+            <ul>
+                <li>Cursando Bacharelado em Ciência de Dados</li>
+                <li>Curso Tech + Santander</li>
+                <li>Oracle + Alura – Backend Essentials</li>
+                <li>Idiomas: Português (Nativo), Inglês (Básico)</li>
+            </ul>
+        </section>
 
-            <section id="portfolio" class="tabcontent">
-                <h3>Portfólio</h3>
-                <p><a class="link" href="https://github.com/katlinmanoela" target="_blank">GitHub</a></p>
-            </section>
+        <section id="portfolio" class="tabcontent">
+            <h3>Portfólio</h3>
+            <ul>
+                <li><a class="link" href="https://github.com/adrianosurano" target="_blank">Meu GitHub com projetos</a></li>
+                <li><a class="link" href="#" target="_blank">Análise de Dados Públicos</a></li>
+                <li><a class="link" href="#" target="_blank">Consultoria em Vendas Online</a></li>
+            </ul>
+        </section>
 
-            <section id="contato" class="tabcontent">
-                <h3>Contato</h3>
-                <form>
-                    <div>
-                        <label for="nome">Nome:</label><br />
-                        <input type="text" id="nome" name="nome" required />
-                    </div>
-                    <div>
-                        <label for="email">Email:</label><br />
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div>
-                        <label for="mensagem">Mensagem:</label><br />
-                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-            </section>
-        </article>
+        <section id="contato" class="tabcontent">
+            <h3>Contato</h3>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>
