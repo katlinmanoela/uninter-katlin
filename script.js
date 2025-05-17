@@ -1,15 +1,21 @@
-function abrirPagina(evt, nomeDaPagina) {
-    const conteudos = document.querySelectorAll(".tabcontent");
-    conteudos.forEach((conteudo) => conteudo.style.display = "none");
+function abrirPagina(evt, nomePagina) {
+    // Esconder todas as abas
+    const tabcontents = document.querySelectorAll(".tabcontent");
+    tabcontents.forEach(tab => tab.style.display = "none");
 
-    const links = document.querySelectorAll(".tablinks");
-    links.forEach((link) => link.classList.remove("active"));
+    // Remover classe active de todos os botões
+    const tablinks = document.querySelectorAll(".tablinks");
+    tablinks.forEach(btn => btn.classList.remove("active"));
 
-    document.getElementById(nomeDaPagina).style.display = "block";
+    // Mostrar a aba clicada
+    document.getElementById(nomePagina).style.display = "block";
+
+    // Adicionar classe active no botão clicado
     evt.currentTarget.classList.add("active");
 }
 
-// Abre a primeira aba automaticamente
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".tablinks").click();
+// Abrir aba "Sobre Mim" por padrão ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+    const primeiroBotao = document.querySelector(".tablinks");
+    if (primeiroBotao) primeiroBotao.click();
 });
