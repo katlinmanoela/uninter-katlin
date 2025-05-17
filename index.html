@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio de Katlin</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Katlin</h1>
+        <h2>Portfólio Pessoal</h2>
+    </header>
+
+    <div class="tab">
+        <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'formacao')">Formação</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'contato')">Contato</button>
+    </div>
+
+    <main>
+        <article>
+            <section id="sobre" class="tabcontent">
+                <h3>Sobre Mim</h3>
+                <p>Além da minha vida profissional, sou amante da natureza e corrida, atividades que me ajudam a manter o equilíbrio entre corpo e mente. Valorizo o aprendizado constante e a conexão humana, buscando sempre evoluir tanto pessoal quanto profissionalmente.</p>
+            </section>
+
+            <section id="formacao" class="tabcontent">
+                <h3>Formação</h3>
+                <p>Cursando Ciência de Dados.</p>
+            </section>
+
+            <section id="portfolio" class="tabcontent">
+                <h3>Portfólio</h3>
+                <p><a class="link" href="https://github.com/katlinmanoela" target="_blank">GitHub</a></p>
+            </section>
+
+            <section id="contato" class="tabcontent">
+                <h3>Contato</h3>
+                <form>
+                    <div>
+                        <label for="nome">Nome:</label><br />
+                        <input type="text" id="nome" name="nome" required />
+                    </div>
+                    <div>
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div>
+                        <label for="mensagem">Mensagem:</label><br />
+                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
