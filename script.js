@@ -1,20 +1,15 @@
-// Esta função exibe a aba selecionada e esconde as outras
-function abrirPagina(evt, nomePagina) {
-    const conteudos = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < conteudos.length; i++) {
-        conteudos[i].style.display = "none";
-    }
+function abrirPagina(evt, nomeDaPagina) {
+    const conteudos = document.querySelectorAll(".tabcontent");
+    conteudos.forEach((conteudo) => conteudo.style.display = "none");
 
-    const links = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < links.length; i++) {
-        links[i].className = links[i].className.replace(" active", "");
-    }
+    const links = document.querySelectorAll(".tablinks");
+    links.forEach((link) => link.classList.remove("active"));
 
-    document.getElementById(nomePagina).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(nomeDaPagina).style.display = "block";
+    evt.currentTarget.classList.add("active");
 }
 
-// Exibe a aba "Sobre Mim" por padrão ao carregar o site
+// Abre a primeira aba automaticamente
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".tablinks").click();
 });
