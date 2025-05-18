@@ -1,6 +1,6 @@
-// Função para controlar a troca das abas
+// Função para alternar entre as abas
 function abrirPagina(evt, nomePagina) {
-    // Pega todas as seções com a classe 'tabcontent'
+    // Seleciona todas as seções das abas
     const conteudos = document.querySelectorAll('.tabcontent');
     
     // Esconde todas as seções
@@ -8,25 +8,24 @@ function abrirPagina(evt, nomePagina) {
         secao.style.display = 'none';
     });
 
-    // Remove a classe 'active' de todos os botões da tab
+    // Remove a classe 'active' de todos os botões
     const botoes = document.querySelectorAll('.tab button');
     botoes.forEach(botao => {
         botao.classList.remove('active');
     });
 
-    // Mostra a seção clicada
+    // Mostra a aba selecionada
     const pagina = document.getElementById(nomePagina);
     if (pagina) {
         pagina.style.display = 'block';
     }
 
-    // Adiciona a classe 'active' ao botão clicado para estilo
+    // Adiciona 'active' no botão clicado para efeito visual
     evt.currentTarget.classList.add('active');
 }
 
-// Inicializa o site mostrando a aba "Sobre Mim" quando carregar
+// Exibe a primeira aba ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    // Dispara clique programaticamente no primeiro botão
     const primeiroBotao = document.querySelector('.tab button');
     if (primeiroBotao) {
         primeiroBotao.click();
