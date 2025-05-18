@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Define a escala para dispositivos móveis -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio de Katlin</title>
-  <!-- Link para o arquivo CSS externo -->
-  <link rel="stylesheet" href="estilo.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio de Katlin</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Cabeçalho do site -->
-  <header>
-    <h1>Katlin</h1>
-    <h2>Portfólio Pessoal</h2>
-  </header>
+    <header>
+        <h1>Katlin</h1>
+        <h2>Portfólio Pessoal</h2>
+    </header>
 
-  <!-- Menu de abas para navegação -->
-  <div class="tab">
-    <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
-    <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
-  </div>
+    <nav class="tab">
+        <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'formacao')">Formação</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
+        <button class="tablinks" onclick="abrirPagina(event, 'contato')">Contato</button>
+    </nav>
 
-  <!-- Seção 'Sobre Mim', inicialmente escondida -->
-  <section id="sobre" class="conteudo">
-    <h2>Sobre Mim</h2>
-    <p>Me chamo Katlin, amo a natureza e corrida.</p>
-  </section>
+    <main>
+        <!-- Seções que aparecem ao clicar nas abas -->
+        <section id="sobre" class="tabcontent">
+            <h3>Sobre Mim</h3>
+            <p>Me chamo Katlin, amo a natureza e corrida.</p>
+        </section>
 
-  <!-- Seção 'Portfólio' com link para o GitHub -->
-  <section id="portfolio" class="conteudo">
-    <h2>Portfólio</h2>
-    <p>
-      <a class="link" href="https://github.com/katlinmanoela" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    </p>
-  </section>
+        <section id="formacao" class="tabcontent">
+            <h3>Formação</h3>
+            <p>Cursando Ciência de Dados.</p>
+        </section>
 
-  <!-- Script que controla a navegação entre abas -->
-  <script>
-    // Função para mostrar a aba clicada e esconder as outras
-    function abrirPagina(evt, nomePagina) {
-      let i, conteudos, tabs;
+        <section id="portfolio" class="tabcontent">
+            <h3>Portfólio</h3>
+            <p><a class="link" href="https://github.com/katlinmanoela" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </section>
 
-      // Esconde todo o conteúdo das abas
-      conteudos = document.querySelectorAll('.conteudo');
-      for (i = 0; i < conteudos.length; i++) {
-        conteudos[i].style.display = 'none';
-      }
-
-      // Remove a classe 'active' dos botões
-      tabs = document.querySelectorAll('.tab button');
-      for (i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-      }
-
-      // Mostra o conteúdo da aba clicada
-      document.getElementById(nomePagina).style.display = 'block';
-
-      // Marca o botão da aba ativa com a classe 'active'
-      evt.currentTarget.classList.add('active');
-    }
-
-    // Abre a primeira aba automaticamente quando a página carrega
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.tab button').click();
-    });
-  </script>
+        <section id="contato" class="tabcontent">
+            <h3>Contato</h3>
+            <form>
+                <div>
+                    <label for="nome">Nome:</label><br />
+                    <input type="text" id="nome" name="nome" required />
+                </div>
+                <div>
+                    <label for="email">Email:</label><br />
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label><br />
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
