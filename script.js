@@ -1,21 +1,38 @@
-function abrirPagina(evt, nomePagina) {
-    // Esconder todas as abas
-    const tabcontents = document.querySelectorAll(".tabcontent");
-    tabcontents.forEach(tab => tab.style.display = "none");
+// Aqui a função controla qual aba mostrar quando clicada
+const botoes = document.querySelectorAll(".btn-menu");
+const conteudos = document.querySelectorAll(".conteudo");
 
-    // Remover classe active de todos os botões
-    const tablinks = document.querySelectorAll(".tablinks");
-    tablinks.forEach(btn => btn.classList.remove("active"));
+botoes.forEach(botao => {
+  botao.addEventListener("click", () => {
+    // Remove a classe ativo de todos os botões e seções
+    botoes.forEach(b => b.classList.remove("active"));
+    conteudos.forEach(c => c.classList.remove("ativo"));
 
-    // Mostrar a aba clicada
-    document.getElementById(nomePagina).style.display = "block";
+    // Adiciona ativo no botão clicado
+    botao.classList.add("active");
 
-    // Adicionar classe active no botão clicado
-    evt.currentTarget.classList.add("active");
-}
+    // Pega o alvo do botão (id da seção)
+    const alvo = botao.getAttribute("data-alvo");
+    const secao = document.getElementById(alvo);
 
-// Abrir aba "Sobre Mim" por padrão ao carregar a página
-window.addEventListener('DOMContentLoaded', () => {
-    const primeiroBotao = document.querySelector(".tablinks");
-    if (primeiroBotao) primeiroBotao.click();
+    // Mostra a seção clicada
+    if (secao) {
+      secao.classList.add("ativo");
+    }
+  });
+});
+
+// Na inicialização, já abre a primeira aba automaticamente
+window.addEventListener("DOMContentLoaded", () => {
+  if (botoes.length > 0) {
+    botoes[0].click();
+  }
+});
+
+// Prevent form submit só pra não recarregar a página aqui
+const form = document.getElementById("form-contato");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Obrigada pelo contato, Katlin! Respondo em breve :)");
+  form.reset();
 });
