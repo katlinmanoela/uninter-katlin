@@ -1,133 +1,131 @@
-/* Remove margens e espaçamentos padrão e ajusta o box model */
+/* Reset básico para evitar margens/paddings padrão */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo geral do corpo da página */
+/* Corpo da página com fonte suave e fundo claro */
 body {
-  /* Fonte suave e moderna */
-  font-family: 'Poppins', sans-serif;
-  background: #f9f7f1; /* Cor clara para facilitar leitura */
-  color: #3e3e3e; /* Cor do texto para contraste */
-  padding: 25px; /* Espaço interno para não grudar nas bordas */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #1f2937;
+    padding: 20px;
 }
 
-/* Estiliza o cabeçalho centralizado */
+/* Cabeçalho centralizado com cores azuladas */
 header {
-  text-align: center;
-  margin-bottom: 40px; /* Espaço abaixo do cabeçalho */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 header h1 {
-  font-size: 3.5em; /* Tamanho grande para o título */
-  color: #2e4a62; /* Azul escuro para destaque */
+    font-size: 3em;
+    color: #3b82f6;
 }
 
 header h2 {
-  font-size: 1.7em;
-  font-weight: 300; /* Peso da fonte mais leve */
-  color: #6a8a9d; /* Azul acinzentado */
-  font-style: italic; /* Itálico para suavizar o subtítulo */
+    font-size: 1.5em;
+    font-style: italic;
+    color: #64748b;
 }
 
-/* Estilo do menu de abas */
+/* Navegação das abas em linha com espaçamento */
 .tab {
-  display: flex; /* Coloca os botões em linha */
-  justify-content: center; /* Centraliza os botões */
-  gap: 15px; /* Espaço entre botões */
-  margin-bottom: 35px;
-  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* para ajustar em telas pequenas */
 }
 
-/* Estilo dos botões do menu */
+/* Botões arredondados, com cores e efeitos de hover */
 .tab button {
-  background-color: #627d98; /* Cor base azul acinzentada */
-  border: none; /* Remove borda padrão */
-  color: #f9f7f1; /* Texto branco */
-  padding: 14px 28px; /* Espaçamento interno */
-  font-weight: 600; /* Negrito médio */
-  border-radius: 30px; /* Botões arredondados */
-  cursor: pointer; /* Cursor de clique */
-  transition: background-color 0.3s ease; /* Suaviza a mudança de cor */
-  font-size: 1em; /* Tamanho da fonte */
+    padding: 12px 20px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
 }
 
-/* Cor do botão quando ativo ou ao passar o mouse */
+/* Cor mais escura quando ativo ou hover */
 .tab button:hover,
 .tab button.active {
-  background-color: #3a5871; /* Azul mais escuro */
+    background-color: #2563eb;
 }
 
-/* Estilo do conteúdo das abas */
-.conteudo {
-  display: none; /* Escondido por padrão */
-  max-width: 750px; /* Limita a largura */
-  margin: 0 auto; /* Centraliza na página */
-  background-color: #ffffff; /* Fundo branco */
-  padding: 30px 35px; /* Espaçamento interno */
-  border-radius: 15px; /* Bordas arredondadas */
-  box-shadow: 0 4px 12px rgba(50, 50, 50, 0.1); /* Sombra suave */
-  animation: fadein 0.4s ease forwards; /* Animação ao aparecer */
+/* Conteúdo das abas escondido por padrão */
+.tabcontent {
+    display: none;
+    animation: fadeEffect 0.5s;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Definição da animação de fade in */
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
+/* Animação suave para mostrar o conteúdo */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
-/* Estilo dos títulos das seções */
-h2 {
-  color: #2e4a62; /* Azul escuro */
-  margin-bottom: 15px; /* Espaço abaixo */
+/* Títulos das seções em azul escuro */
+h3 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
 }
 
-/* Estilo dos links do portfólio */
+/* Listas com marcador padrão e recuo */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Links com cor azul e estilo */
 a.link {
-  color: #627d98; /* Azul acinzentado */
-  text-decoration: none; /* Remove sublinhado */
-  font-weight: 600; /* Negrito médio */
-  font-size: 1.05em; /* Levemente maior */
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Sublinhado ao passar o mouse */
 a.link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Estilo do formulário */
+/* Formulário com espaçamento vertical entre os campos */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px; /* Espaço entre campos */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* Estilo dos campos de texto e textarea */
+/* Campos com padding e borda arredondada */
 input, textarea {
-  padding: 12px;
-  border: 1px solid #d3d3d3; /* Borda cinza clara */
-  border-radius: 10px;
-  font-size: 1em;
-  width: 100%; /* Ocupa toda a largura disponível */
-  font-family: inherit; /* Usa a mesma fonte do body */
-  resize: vertical; /* Permite redimensionar só verticalmente */
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
 }
 
-/* Estilo do botão de envio */
+/* Botão de envio com estilo parecido com os botões das abas */
 button[type="submit"] {
-  background-color: #627d98;
-  color: #f9f7f1;
-  border: none;
-  padding: 14px;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Cor do botão ao passar o mouse */
+/* Hover do botão de envio */
 button[type="submit"]:hover {
-  background-color: #3a5871;
+    background-color: #2563eb;
 }
