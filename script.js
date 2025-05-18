@@ -1,38 +1,33 @@
-// Aqui a função controla qual aba mostrar quando clicada
-const botoes = document.querySelectorAll(".btn-menu");
-const conteudos = document.querySelectorAll(".conteudo");
-
-botoes.forEach(botao => {
-  botao.addEventListener("click", () => {
-    // Remove a classe ativo de todos os botões e seções
-    botoes.forEach(b => b.classList.remove("active"));
-    conteudos.forEach(c => c.classList.remove("ativo"));
-
-    // Adiciona ativo no botão clicado
-    botao.classList.add("active");
-
-    // Pega o alvo do botão (id da seção)
-    const alvo = botao.getAttribute("data-alvo");
-    const secao = document.getElementById(alvo);
-
-    // Mostra a seção clicada
-    if (secao) {
-      secao.classList.add("ativo");
-    }
+// Função que exibe a aba selecionada e oculta as outras
+function abrirPagina(evento, nomeDaAba) {
+  // Seleciona todas as seções com a classe 'conteudo'
+  const conteudos = document.querySelectorAll('.conteudo');
+  
+  // Esconde todas as abas
+  conteudos.forEach(secao => {
+    secao.style.display = 'none';
   });
-});
 
-// Na inicialização, já abre a primeira aba automaticamente
-window.addEventListener("DOMContentLoaded", () => {
-  if (botoes.length > 0) {
-    botoes[0].click();
+  // Seleciona todos os botões do menu
+  const botoes = document.querySelectorAll('.tab button');
+
+  // Remove a classe 'active' de todos os botões
+  botoes.forEach(botao => {
+    botao.classList.remove('active');
+  });
+
+  // Mostra a aba clicada, alterando o estilo para display block
+  document.getElementById(nomeDaAba).style.display = 'block';
+
+  // Adiciona a classe 'active' ao botão clicado para destacar
+  evento.currentTarget.classList.add('active');
+}
+
+// Quando a página terminar de carregar, abre automaticamente a primeira aba
+document.addEventListener('DOMContentLoaded', () => {
+  // Simula o clique no primeiro botão para abrir a primeira aba
+  const primeiroBotao = document.querySelector('.tab button');
+  if (primeiroBotao) {
+    primeiroBotao.click();
   }
-});
-
-// Prevent form submit só pra não recarregar a página aqui
-const form = document.getElementById("form-contato");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Obrigada pelo contato, Katlin! Respondo em breve :)");
-  form.reset();
 });
