@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfólio de Katlin</title>
-    <link rel="stylesheet" href="estilo.css" />
-    <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portifólio pessoal - CV Online</title>
+  <!-- Aqui linko o CSS externo -->
+  <link rel="stylesheet" href="estilo.css" />
+  <!-- Faço o script rodar só depois de carregar tudo -->
+  <script defer src="script.js"></script>
+  <!-- Fonte do Google, só pra deixar bonito e leve -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <h1>Katlin</h1>
-        <h2>Portfólio Pessoal</h2>
-    </header>
 
-    <nav class="tab">
-        <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
-        <button class="tablinks" onclick="abrirPagina(event, 'formacao')">Formação</button>
-        <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
-        <button class="tablinks" onclick="abrirPagina(event, 'contato')">Contato</button>
-    </nav>
+  <!-- Cabeçalho com meu nome e o que eu faço -->
+  <header>
+    <h1>Katlin Manoela</h1>
+    <p>RU - 4757772 </p>
+  </header>
 
-    <main>
-        <article>
-            <section id="sobre" class="tabcontent">
-                <h3>Sobre Mim</h3>
-                <p>Me chamo Katlin, sou apaixonada pela natureza e corrida. Busco sempre crescer profissionalmente, unindo dedicação e criatividade.</p>
-            </section>
+  <!-- Navegação com botões arredondados para trocar seções -->
+  <nav class="menu">
+    <button class="btn-menu" data-alvo="sobre">Sobre Mim</button>
+    <button class="btn-menu" data-alvo="formacao">Formação</button>
+    <button class="btn-menu" data-alvo="portfolio">Portfólio</button>
+    <button class="btn-menu" data-alvo="contato">Contato</button>
+  </nav>
 
-            <section id="formacao" class="tabcontent">
-                <h3>Formação</h3>
-                <p>Cursando Ciência de Dados, com foco em análise de dados públicos e projetos educacionais.</p>
-            </section>
+  <!-- Aqui fica o conteúdo que vai aparecer e sumir -->
+  <section id="sobre" class="conteudo ativo">
+    <h2>Sobre Mim</h2>
+    <p>Apaixonada por corrida, natureza e tecnologia.</p>
+  </section>
 
-            <section id="portfolio" class="tabcontent">
-                <h3>Portfólio</h3>
-                <p>Abaixo alguns dos meus projetos e experiências práticas:</p>
-                <ul>
-                    <li><a class="link" href="#" target="_blank">Análise de Dados Públicos</a></li>
-                    <li><a class="link" href="#" target="_blank">Projeto Educacional para Idosos</a></li>
-                    <li><a class="link" href="#" target="_blank">Consultoria Comercial</a></li>
-                </ul>
-            </section>
+  <section id="formacao" class="conteudo">
+    <h2>Formação</h2>
+    <p>Cursando Ciência de Dados.</p>
+  </section>
 
-            <section id="contato" class="tabcontent">
-                <h3>Contato</h3>
-                <form>
-                    <div>
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required />
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div>
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-            </section>
-        </article>
-    </main>
+ <section id="portfolio" class="conteudo">
+  <h2>Portfólio</h2>
+  <p><a class="link" href="https://github.com/katlinmanoela" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+</section>
+
+  <section id="contato" class="conteudo">
+    <h2>Contato</h2>
+    <form id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
 </body>
 </html>
