@@ -1,71 +1,133 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <!-- Define a escala para dispositivos móveis -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio de Katlin</title>
-  <!-- Link para o arquivo CSS externo -->
-  <link rel="stylesheet" href="estilo.css" />
-</head>
-<body>
-  <!-- Cabeçalho do site -->
-  <header>
-    <h1>Katlin</h1>
-    <h2>Portfólio Pessoal</h2>
-  </header>
+/* Remove margens e espaçamentos padrão e ajusta o box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Menu de abas para navegação -->
-  <div class="tab">
-    <button class="tablinks" onclick="abrirPagina(event, 'sobre')">Sobre Mim</button>
-    <button class="tablinks" onclick="abrirPagina(event, 'portfolio')">Portfólio</button>
-  </div>
+/* Estilo geral do corpo da página */
+body {
+  /* Fonte suave e moderna */
+  font-family: 'Poppins', sans-serif;
+  background: #f9f7f1; /* Cor clara para facilitar leitura */
+  color: #3e3e3e; /* Cor do texto para contraste */
+  padding: 25px; /* Espaço interno para não grudar nas bordas */
+}
 
-  <!-- Seção 'Sobre Mim', inicialmente escondida -->
-  <section id="sobre" class="conteudo">
-    <h2>Sobre Mim</h2>
-    <p>Me chamo Katlin, amo a natureza e corrida.</p>
-  </section>
+/* Estiliza o cabeçalho centralizado */
+header {
+  text-align: center;
+  margin-bottom: 40px; /* Espaço abaixo do cabeçalho */
+}
 
-  <!-- Seção 'Portfólio' com link para o GitHub -->
-  <section id="portfolio" class="conteudo">
-    <h2>Portfólio</h2>
-    <p>
-      <a class="link" href="https://github.com/katlinmanoela" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    </p>
-  </section>
+header h1 {
+  font-size: 3.5em; /* Tamanho grande para o título */
+  color: #2e4a62; /* Azul escuro para destaque */
+}
 
-  <!-- Script que controla a navegação entre abas -->
-  <script>
-    // Função para mostrar a aba clicada e esconder as outras
-    function abrirPagina(evt, nomePagina) {
-      let i, conteudos, tabs;
+header h2 {
+  font-size: 1.7em;
+  font-weight: 300; /* Peso da fonte mais leve */
+  color: #6a8a9d; /* Azul acinzentado */
+  font-style: italic; /* Itálico para suavizar o subtítulo */
+}
 
-      // Esconde todo o conteúdo das abas
-      conteudos = document.querySelectorAll('.conteudo');
-      for (i = 0; i < conteudos.length; i++) {
-        conteudos[i].style.display = 'none';
-      }
+/* Estilo do menu de abas */
+.tab {
+  display: flex; /* Coloca os botões em linha */
+  justify-content: center; /* Centraliza os botões */
+  gap: 15px; /* Espaço entre botões */
+  margin-bottom: 35px;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
 
-      // Remove a classe 'active' dos botões
-      tabs = document.querySelectorAll('.tab button');
-      for (i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-      }
+/* Estilo dos botões do menu */
+.tab button {
+  background-color: #627d98; /* Cor base azul acinzentada */
+  border: none; /* Remove borda padrão */
+  color: #f9f7f1; /* Texto branco */
+  padding: 14px 28px; /* Espaçamento interno */
+  font-weight: 600; /* Negrito médio */
+  border-radius: 30px; /* Botões arredondados */
+  cursor: pointer; /* Cursor de clique */
+  transition: background-color 0.3s ease; /* Suaviza a mudança de cor */
+  font-size: 1em; /* Tamanho da fonte */
+}
 
-      // Mostra o conteúdo da aba clicada
-      document.getElementById(nomePagina).style.display = 'block';
+/* Cor do botão quando ativo ou ao passar o mouse */
+.tab button:hover,
+.tab button.active {
+  background-color: #3a5871; /* Azul mais escuro */
+}
 
-      // Marca o botão da aba ativa com a classe 'active'
-      evt.currentTarget.classList.add('active');
-    }
+/* Estilo do conteúdo das abas */
+.conteudo {
+  display: none; /* Escondido por padrão */
+  max-width: 750px; /* Limita a largura */
+  margin: 0 auto; /* Centraliza na página */
+  background-color: #ffffff; /* Fundo branco */
+  padding: 30px 35px; /* Espaçamento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(50, 50, 50, 0.1); /* Sombra suave */
+  animation: fadein 0.4s ease forwards; /* Animação ao aparecer */
+}
 
-    // Abre a primeira aba automaticamente quando a página carrega
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.tab button').click();
-    });
-  </script>
-</body>
-</html>
+/* Definição da animação de fade in */
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Estilo dos títulos das seções */
+h2 {
+  color: #2e4a62; /* Azul escuro */
+  margin-bottom: 15px; /* Espaço abaixo */
+}
+
+/* Estilo dos links do portfólio */
+a.link {
+  color: #627d98; /* Azul acinzentado */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 600; /* Negrito médio */
+  font-size: 1.05em; /* Levemente maior */
+}
+
+/* Sublinhado ao passar o mouse */
+a.link:hover {
+  text-decoration: underline;
+}
+
+/* Estilo do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaço entre campos */
+}
+
+/* Estilo dos campos de texto e textarea */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #d3d3d3; /* Borda cinza clara */
+  border-radius: 10px;
+  font-size: 1em;
+  width: 100%; /* Ocupa toda a largura disponível */
+  font-family: inherit; /* Usa a mesma fonte do body */
+  resize: vertical; /* Permite redimensionar só verticalmente */
+}
+
+/* Estilo do botão de envio */
+button[type="submit"] {
+  background-color: #627d98;
+  color: #f9f7f1;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Cor do botão ao passar o mouse */
+button[type="submit"]:hover {
+  background-color: #3a5871;
+}
